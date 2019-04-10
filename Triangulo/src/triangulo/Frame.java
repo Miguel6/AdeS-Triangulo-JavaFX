@@ -129,12 +129,16 @@ public class Frame extends JFrame {
 
 	private void onMouseClicked() {
 		try {
-			Triangulo triangulo = new Triangulo(
-					Double.parseDouble(sideA.getText()),
-					Double.parseDouble(sideB.getText()),
-					Double.parseDouble(sideC.getText())
-					);
-			this.lblTriangle.setText( triangulo.getTriangleTypeBySide());
+			if(sideA.getText().isEmpty() || sideB.getText().isEmpty() || sideC.getText().isEmpty()) {
+				this.lblTriangle.setText("Campos Vacios");				
+			}else {
+				Triangulo triangulo = new Triangulo(
+						Double.parseDouble(sideA.getText()),
+						Double.parseDouble(sideB.getText()),
+						Double.parseDouble(sideC.getText())
+						);
+				this.lblTriangle.setText( triangulo.getTriangleTypeBySide());				
+			}
 		} catch (NumberFormatException e) {
 			this.lblTriangle.setText("Por favor ingrese numeros");
 		} catch(Exception e) { 
