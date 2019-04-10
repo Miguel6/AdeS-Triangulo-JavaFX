@@ -101,7 +101,6 @@ public class Frame extends JFrame {
 		sideA.setBounds(66, 8, 86, 20);
 		contentPane.add(sideA);
 		sideA.setColumns(10);
-		System.out.println("ASDASDAS");
 
 		sideB = new JTextField();
 		sideB.setBounds(66, 33, 86, 20);
